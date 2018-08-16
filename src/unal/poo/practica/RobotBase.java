@@ -19,14 +19,24 @@ public class RobotBase
             
             //Direction.NORTH, EAST, SOUTH, WEST
             //Definicion de la ubicacion del robot, Ciudad, posicion, Direccion, Numero things en el bolso.
-            estudiante = new Robot(objetos,0, 2, Direction.EAST,10);
+            estudiante = new Robot(objetos,0, 2, Direction.WEST,10);
             
-	    //Mover una interseccion en el sentido al cual este apuntando el objeto.
+	    /*Mover una interseccion en el sentido al cual este apuntando el objeto.
             estudiante.move ();
+            */
             
-            //Girar a la izquierda
-            estudiante.turnLeft();
-            
+            rotation(2);
+            distance(1);
+            rotation(3);
+            distance(3);
+            rotation(3);
+            distance(3);
+            rotation(3);
+            distance(3);
+            rotation(3);
+            distance(2);
+            rotation(2);
+            /*
             //Tomando decisiones, Si puedo tomar un Thing
             boolean puedeTomar = estudiante.canPickThing();
             
@@ -43,18 +53,20 @@ public class RobotBase
             //Si el frente esta libre de Wall
             estudiante.frontIsClear();
             
-            //Invocando una funcion
-            creacionFuncion(4);
-            
             //Toman un Thing
-            estudiante.pickThing();
+            estudiante.pickThing();*/
+            
             
             
 	}
-        
-        public static void creacionFuncion(int parametroEntrada){
-            for (int i = 0; i < parametroEntrada; i++) 
+        public static void distance(int c){
+            for(int i=0;i<c;i++){
                 estudiante.move();
+            }
+        }
+        public static void rotation(int c){
+            for(int i=0;i<c;i++){
+                estudiante.turnLeft();
+            }
         }
 }
-
